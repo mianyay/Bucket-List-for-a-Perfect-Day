@@ -6,6 +6,13 @@ const todoList = document.getElementById("todoList");
 const todoCount = document.getElementById("todoCount");
 const addButton = document.querySelector(".button");
 const deleteButton = document.getElementById("deleteButton");
+const bubbleImages = [
+    "./bubble-assets/mini-bubble.png",
+    "./bubble-assets/baby-bubble.png",
+    "./bubble-assets/medium-bubble.png",
+    "./bubble-assets/big-bubble.png",
+]
+const bubbleLayer = document.getElementById("bubbleLayer");
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
@@ -87,3 +94,28 @@ function toggleTask(index) {
 function saveToLocalStorage() {
     localStorage.setItem("todo", JSON.stringify(todo));
 }
+
+function randomBetween(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function spawnBubble() {
+    const img = document.createElement("img")
+    img.src = bubbleImages[Math.floor(Math.random() * bubbleImages.length)];
+    img.className = "bubble";
+
+    img.style.width = `${randomBetween(1.5, 5.5)}rem`; // css properties 
+    img.style.left = `${randomBetween(0, 100)}vw`
+    img.style.setProperty("--drift", `${randomBetween(-6, 6)}rem`); // bubble drifts
+    img.style.setProperty("--spin", `${randomBetween(-45, 45)}deg`); // spinning
+    img.style.setProperty("--bubble-opacity", randomBetween(0.35, 0.85)); // opacity
+    img.style.animationDuration = `${randomBetween(10, 22)}s`;
+
+    bubbleLayer.appendChild(img);
+    img.addEventListener("animationend", () => img.remove())
+}
+
+for (let a = 0; a < 8; a++) {
+    setTimeout(spawnBubble, a * 400);
+}
+setInterval(spawnBubble, 900); // spawn bubbles every 900 milliseconds

@@ -1,8 +1,4 @@
 :root {
-    --gradient: linear-gradient(180deg,
-        rgba(45, 112, 1253, 0.73) 0%, 
-        #163e92 100%
-    );
     --blue: #008eff;
     --grey: #b1bacb;
     --blue-light: #c1f0fa;
@@ -13,6 +9,8 @@
     --orange: #f7884d;
     --green: #93d33c;
     --yellow: #fae878;
+    --pink-dark: #d90961;
+    --green-dark: #6d9932;
 }
 
 body {
@@ -24,6 +22,8 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
 input, button {
@@ -34,12 +34,13 @@ input, button {
     color: var(--white);
     font-size: 1.1rem;
     padding: 0.7rem 1.5rem;
-    border-radius: 0.3rem;
     background-color: var(--pink);
     border: none;
     position: absolute;
     right: 0.5rem;
     bottom: 0.5rem;
+    border-radius: 3rem;
+    
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -52,13 +53,19 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border-radius: 2rem;
     background: var(--white);
     padding: 3rem;
     height: 50%;
     width: 60%;
     box-shadow: 0.1rem 3rem 1rem rgba(0, 23, 71, 0.15);
     max-width: 30rem;
+    clip-path: polygon(
+        0% 8%, 4% 8%, 4% 4%, 8% 4%, 8% 0%,
+        92% 0%, 92% 4%, 96% 4%, 96% 8%, 100% 8%,
+        100% 92%, 96% 92%, 96% 96%, 92% 96%, 92% 100%,
+        8% 100%, 8% 96%, 4% 96%, 4% 92%, 0% 92%
+    );
+     opacity: 0.8;
 }
 
 h2 {
@@ -121,6 +128,12 @@ li {
     text-decoration: line-through;
 }
 
+.disabled:hover {
+    transition: background-color 0.2s ease;
+    background-color: var(--green-dark);  /* darker shade of button when hovered */
+    cursor: pointer;
+}
+
 input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
@@ -181,6 +194,7 @@ input[type="checkbox"]:checked::before {
     background-color: var(--white);
     padding: 1.2rem;
     border-radius: 0.5rem;
+    opacity: 0.8;
 }
 
 .made-by {
@@ -211,4 +225,59 @@ input[type="checkbox"]:checked::before {
 
 .scroll::-webkit-scrollbar-track {
     display: none;
+}
+
+/* bubble animation stuff! */
+.bubble-layer {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -10rem;
+    image-rendering: pixelated;
+    animation-name: float-up;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translate(0,0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: var(--bubble-opacity, 0.8);
+    }
+    90% {
+        opacity: var(--bubble-opacity, 0.8);
+    }
+    100% {
+        transform: translate(var(--drift, 2rem), -115vh) rotate(var(--spin, 10deg));
+    }
+}
+
+.todo, footer {
+    position: relative;
+    z-index: 1;
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.button:hover {
+    transition: background-color 0.2s ease;
+    background-color: var(--pink-dark);  /* darker shade of button when hovered */
+    cursor: pointer;
 }
