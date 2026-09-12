@@ -2,7 +2,7 @@
 
 
 ## Live demo
-https://mianyay.github.io/sweet-shop-website/
+https://mianyay.github.io/Bucket-List-for-a-Perfect-Day/
 
 ## About
 This is a pixel-themed to-do list that helps you plan the perfect day. You can add tasks, check them off with a little pixel star while watching your list float above an animated bubble background. This was built to practice vanilla JavaScript and custom CSS styling. It has small interactive details that make a simple checklist have an enhanced aesthetic appeal.
