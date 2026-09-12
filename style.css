@@ -14,6 +14,7 @@
 }
 
 body {
+    cursor: url("./flower-cursor.png") 8 8, auto;
     font-family: "Silkscreen", sans-serif;
     background: var(--gradient);
     margin: 0;
