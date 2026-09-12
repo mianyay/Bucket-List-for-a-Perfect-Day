@@ -8,6 +8,14 @@ https://mianyay.github.io/sweet-shop-website/
 This is a pixel-themed to-do list that helps you plan the perfect day. You can add tasks, check them off with a little pixel star while watching your list float above an animated bubble background. This was built to practice vanilla JavaScript and custom CSS styling. It has small interactive details that make a simple checklist have an enhanced aesthetic appeal.
 
 ## Features
+- Add, edit, and delete tasks 
+-  Pixel-star checkboxes instead of default browser checkboxes 
+- Delete all tasks at once 
+- Tasks are saved automatically with local storage
+- Animated floating bubbles 
+- Pixel-flower cursor 
+- Self-drawn pixel-art 
+- Silkscreen font 
 
 
 ## How to run
