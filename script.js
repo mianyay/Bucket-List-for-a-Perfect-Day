@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     deleteButton.addEventListener("click", deleteAllTasks);
     displayTasks();
-});
+})
 
 function addTask() {
     const newTask = todoInput.value.trim()
@@ -31,13 +31,13 @@ function addTask() {
         displayTasks();
     };
 
-};
+}
 
 function deleteAllTasks() {
     todo = [];
     saveToLocalStorage();
     displayTasks();
-};
+}
 
 function displayTasks() {
     todoList.innerHTML = "";
@@ -56,7 +56,7 @@ function displayTasks() {
     });
     todoCount.textContent = todo.length;
     
-};
+}
 
 function editTask(index) {
     const todoItem = document.getElementById(`todo-${index}`);
@@ -68,7 +68,7 @@ function editTask(index) {
     inputElement.focus();
 
     inputElement.addEventListener("blur", function () {
-        const updatedText = inputElement.value.trial();
+        const updatedText = inputElement.value.trim();
         if (updatedText) {
             todo[index].text = updatedText;
             saveToLocalStorage();
