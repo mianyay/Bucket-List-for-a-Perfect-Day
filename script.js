@@ -7,10 +7,10 @@ const todoCount = document.getElementById("todoCount");
 const addButton = document.querySelector(".button");
 const deleteButton = document.getElementById("deleteButton");
 const bubbleImages = [
-    "./bubble-assets/mini-bubble.png",
-    "./bubble-assets/baby-bubble.png",
-    "./bubble-assets/medium-bubble.png",
-    "./bubble-assets/big-bubble.png",
+    "./bubble-assets/mini-bubble.PNG",
+    "./bubble-assets/baby-bubble.PNG",
+    "./bubble-assets/medium-bubble.PNG",
+    "./bubble-assets/big-bubble.PNG",
 ]
 const bubbleLayer = document.getElementById("bubbleLayer");
 
