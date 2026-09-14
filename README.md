@@ -1,4 +1,4 @@
-# A checklist to Ensure you have a Perfect Day!
+# A Checklist to ensure you have a Perfect Day!
 
 
 ## Live demo
