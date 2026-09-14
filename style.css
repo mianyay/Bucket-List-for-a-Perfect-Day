@@ -79,6 +79,7 @@ h2 {
 .input {
     position: relative;
     display: flex;
+    color: var(--grey);
 }
 
 .input-field{
@@ -87,6 +88,7 @@ h2 {
     border-radius: 0.5rem;
     padding: 1.25rem;
     font-size: 1rem;
+    color: var(--orange);
 }
 
 input [type="text"]::placeholder {
@@ -118,6 +120,10 @@ li {
     align-items: center;
 }
 
+#todoList p:hover {
+    transition: background-color 0.2s ease;
+    background-color: var(--grey);  /* darker shade of button when hovered */
+}
 
 #todoList .disabled {
     color: var(--blue-light);
@@ -129,11 +135,6 @@ li {
     text-decoration: line-through;
 }
 
-.disabled:hover {
-    transition: background-color 0.2s ease;
-    background-color: var(--green-dark);  /* darker shade of button when hovered */
-    cursor: pointer;
-}
 
 input[type="checkbox"] {
     appearance: none;
